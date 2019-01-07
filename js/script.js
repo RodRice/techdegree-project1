@@ -29,7 +29,7 @@ var quotes = [
 
   },
   {
-    quote: "I feel like I'm taking crazy pills.",
+    quote: "I feel like I'm taking crazy pills (when learning JS).",
     source: "Zoolander",
     citation: " ",
     year: " "
@@ -41,6 +41,14 @@ var quotes = [
     year: " "
   },
 ]
+function random_bg_color() {
+  var x = Math.floor(Math.random() * 256);
+  var y = Math.floor(Math.random() * 256);
+  var z = Math.floor(Math.random() * 256);
+  var bgColor = "rgb(" + x + y + z + ")";
+  document.body.style.background = bgColor;
+}
+
 
 function getRandomQuote(){
   var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
@@ -60,8 +68,10 @@ function printQuote() {
     message += "<span class='citation'>" + displayedQuote.citation + "</span>";
     message += "<span class = 'year'>" + displayedQuote.year + "</span>" + "</p>";
 }
+  random_bg_color();
 
   document.getElementById('quote-box').innerHTML = message;
+
 }
  printQuote();
 
